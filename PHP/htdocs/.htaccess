@@ -1,0 +1,21 @@
+# Abilita mod_rewrite
+RewriteEngine On
+
+# Se la richiesta NON è un file fisico...
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# ...e NON è una directory esistente...
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ...allora reindirizza a apimanager.php
+RewriteRule ^(.*)$ apimanager.php [QSA,L]
+
+# Consenti solo i metodi REST desiderati
+<LimitExcept GET POST PUT DELETE>
+    Deny from all
+</LimitExcept>
+
+# Interpreta anche .txt e .svg come file PHP (SVG dinamici, TXT generati)
+<FilesMatch "\.(txt|svg)$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
