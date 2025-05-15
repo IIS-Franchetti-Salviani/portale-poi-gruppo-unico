@@ -1,0 +1,80 @@
+[
+  {
+    "denominazione": "Sistemi e Reti",
+    "disciplina": {
+      "denominazione": "Informatica",
+      "anno": "3",
+      "isPartial": true,
+      "link": "http://localhost/discipline/D001"
+    },
+    "insegnamenti": [
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T001/M001/C001/2024-2025"
+      },
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T001/M001/C002/2024-2025"
+      }
+    ],
+    "link": "http://localhost/materie/M001"
+  },
+  {
+    "denominazione": "Informatica",
+    "disciplina": {
+      "denominazione": "Informatica",
+      "anno": "3",
+      "isPartial": true,
+      "link": "http://localhost/discipline/D001"
+    },
+    "insegnamenti": [
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T001/M002/C001/2024-2025"
+      },
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T002/M002/C002/2024-2025"
+      }
+    ],
+    "link": "http://localhost/materie/M002"
+  },
+  {
+    "denominazione": "TPS",
+    "disciplina": {
+      "denominazione": "Elettronica",
+      "anno": "4",
+      "isPartial": true,
+      "link": "http://localhost/discipline/D002"
+    },
+    "insegnamenti": [
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T002/M003/C003/2024-2025"
+      }
+    ],
+    "link": "http://localhost/materie/M003"
+  },
+  {
+    "denominazione": "Tecnologie",
+    "disciplina": {
+      "denominazione": "Elettronica",
+      "anno": "4",
+      "isPartial": true,
+      "link": "http://localhost/discipline/D002"
+    },
+    "insegnamenti": [
+      {
+        "annoScolastico": "2024-2025",
+        "isPartial": true,
+        "link": "http://localhost/insegnamenti/T002/M004/C003/2024-2025"
+      }
+    ],
+    "link": "http://localhost/materie/M004"
+  }
+]
