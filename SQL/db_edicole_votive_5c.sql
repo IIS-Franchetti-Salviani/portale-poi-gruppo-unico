@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 15, 2025 alle 11:00
+-- Creato il: Mag 15, 2025 alle 11:06
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 8.2.0
 
@@ -32,6 +32,14 @@ CREATE TABLE `gruppi` (
   `gru_gui_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `gruppi`
+--
+
+INSERT INTO `gruppi` (`gru_codice`, `gru_gui_id`) VALUES
+(1, 1),
+(2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +55,14 @@ CREATE TABLE `guide` (
   `gui_password` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `guide`
+--
+
+INSERT INTO `guide` (`gui_id`, `gui_nome`, `gui_cognome`, `gui_telefono`, `gui_username`, `gui_password`) VALUES
+(1, 'Anna', 'Rossi', '3331234567', 'anna.rossi', 'pwd123'),
+(2, 'Marco', 'Verdi', '3349876543', 'marco.verdi', 'pwd456');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +75,15 @@ CREATE TABLE `immagini` (
   `imm_desc` varchar(2000) NOT NULL,
   `imm_poi_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `immagini`
+--
+
+INSERT INTO `immagini` (`imm_id`, `imm_url`, `imm_desc`, `imm_poi_id`) VALUES
+(1, 'https://esempio.it/edicola1.jpg', 'Immagine dell\'edicola del Soccorso', 1),
+(2, 'https://esempio.it/edicola2.jpg', 'San Francesco in preghiera', 2),
+(3, 'https://esempio.it/edicola3.jpg', 'Affresco restaurato Madonna delle Grazie', 3);
 
 -- --------------------------------------------------------
 
@@ -74,6 +99,14 @@ CREATE TABLE `indicazioni` (
   `ind_per_gru_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `indicazioni`
+--
+
+INSERT INTO `indicazioni` (`ind_id`, `ind_timestamp`, `ind_testo`, `ind_per_iti_id`, `ind_per_gru_id`) VALUES
+(1, '2025-05-15', 'Tenere la destra al bivio dopo l’olivo secolare', 1, 1),
+(2, '2025-05-15', 'Fermarsi 5 minuti per spiegazione storico-artistica', 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +120,14 @@ CREATE TABLE `itinerari` (
   `iti_lunghezza` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `itinerari`
+--
+
+INSERT INTO `itinerari` (`iti_id`, `iti_durata`, `iti_velocita`, `iti_lunghezza`) VALUES
+(1, '01:30:00', 4.5, 6.8),
+(2, '02:00:00', 3.8, 7.5);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +139,14 @@ CREATE TABLE `percorre` (
   `per_gru_id` int(11) NOT NULL,
   `per_data_partenza` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `percorre`
+--
+
+INSERT INTO `percorre` (`per_iti_id`, `per_gru_id`, `per_data_partenza`) VALUES
+(1, 1, '2025-05-15 09:00:00'),
+(2, 2, '2025-05-15 10:30:00');
 
 -- --------------------------------------------------------
 
@@ -137,6 +186,16 @@ CREATE TABLE `sonopresenti` (
   `sop_iti_id` int(11) NOT NULL,
   `sop_progressivo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `sonopresenti`
+--
+
+INSERT INTO `sonopresenti` (`sop_poi_id`, `sop_iti_id`, `sop_progressivo`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 1),
+(4, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -230,25 +289,25 @@ ALTER TABLE `tipologie`
 -- AUTO_INCREMENT per la tabella `guide`
 --
 ALTER TABLE `guide`
-  MODIFY `gui_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `gui_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `immagini`
 --
 ALTER TABLE `immagini`
-  MODIFY `imm_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `imm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `indicazioni`
 --
 ALTER TABLE `indicazioni`
-  MODIFY `ind_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ind_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `itinerari`
 --
 ALTER TABLE `itinerari`
-  MODIFY `iti_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `iti_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `poi`
